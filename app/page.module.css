@@ -1,15 +1,18 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
 }
-
+.content {
+  /* display: flex; */
+}
 .description {
   display: inherit;
   justify-content: inherit;
+  justify-content: space-between;
   align-items: inherit;
   font-size: 0.85rem;
   max-width: var(--max-width);
@@ -33,7 +36,10 @@
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   border-radius: var(--border-radius);
 }
-
+ .xLogo {
+  background-color: black;
+  border-radius: 16px;
+ }
 .code {
   font-weight: 700;
   font-family: var(--font-mono);
@@ -47,11 +53,16 @@
 }
 
 .card {
-  padding: 1rem 1.2rem;
+  padding: 16px;
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
+  
+  /* align-items: center; */
+  transition: transform 200ms;
+  /* justify-content: center; */
+
 }
 
 .card span {
@@ -59,9 +70,12 @@
   transition: transform 200ms;
 }
 
-.card h2 {
-  font-weight: 600;
+.card h3 {
+  font-weight: 500;
   margin-bottom: 0.7rem;
+  font-size: 22px;
+  padding-top: 0.5rem;
+
 }
 
 .card p {
@@ -71,6 +85,7 @@
   line-height: 1.5;
   max-width: 30ch;
 }
+
 
 .center {
   display: flex;
@@ -103,10 +118,20 @@
   filter: blur(45px);
   transform: translateZ(0);
 }
+.photoCard {
+  border-radius: 75px;
 
-.logo {
-  position: relative;
 }
+
+.iconContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 8px;
+}
+/* .logo {
+  position: relative;
+} */
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
@@ -114,13 +139,13 @@
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
   }
 
-  .card:hover span {
-    transform: translateX(4px);
+  .card:hover {
+    transform: translateY(4px);
   }
 }
 
 @media (prefers-reduced-motion) {
-  .card:hover span {
+  .card:hover {
     transform: none;
   }
 }
